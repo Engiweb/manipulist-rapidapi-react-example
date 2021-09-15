@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppFormParam should work when add-incremental-number and param1 1`] = `[Function]`;
+
+exports[`AppFormParam should work when add-incremental-number and param2 1`] = `[Function]`;

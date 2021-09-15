@@ -238,7 +238,9 @@ const AppForm = () => {
             defaultValue="lf"
           >
             {LB_OPTIONS.map((lb) => (
-              <option value={lb}>{lb}</option>
+              <option key={`lb-${lb}`} value={lb}>
+                {lb}
+              </option>
             ))}
           </select>
 

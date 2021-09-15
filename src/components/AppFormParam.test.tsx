@@ -1,16 +1,35 @@
 import { render, screen } from "@testing-library/react";
+import { TOOLS_FORM } from "../constants/form";
 import AppFormParam from "./AppFormParam";
 
+const register = jest.fn();
+
 describe("AppFormParam", () => {
-  test("check text", () => {
-    render(<AppFormParam />);
-    const span = screen.getByTestId("footer");
-    expect(span).toHaveTextContent("Made by Engiweb Ltd");
+  afterEach(() => jest.resetAllMocks());
+
+  test("should work when add-incremental-number and param1", () => {
+    const { asFragment } = render(
+      <AppFormParam
+        register={register}
+        tool={TOOLS_FORM["add-incremental-number"]}
+        errors={{}}
+        name="param1"
+      />
+    );
+
+    expect(asFragment).toMatchSnapshot();
   });
 
-  test("check link", () => {
-    render(<AppFormParam />);
-    const span = screen.getByTestId("ew-lnk");
-    expect(span).toHaveAttribute("href");
+  test("should work when add-incremental-number and param2", () => {
+    const { asFragment } = render(
+      <AppFormParam
+        register={register}
+        tool={TOOLS_FORM["add-incremental-number"]}
+        errors={{}}
+        name="param2"
+      />
+    );
+
+    expect(asFragment).toMatchSnapshot();
   });
 });
